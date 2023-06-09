@@ -22,6 +22,23 @@ Edit [consts.ts](./lib/consts.ts) and update:
 - AWS Region (AWS Region of the target account)
 - Projects Logical Name (A logical name for the deployed infra. e.g. 'Prod', 'Skippr Test', 'Acme Datalake', etc)
 
+
+Edit [data-warehouse-stack.ts](./lib/data-warehouse-stack.ts) and update the Skippr config for the `ingestionJob` resource:
+
+```base
+const ingestionJob = new SkipprStack(this, `${props.logicalName.toLowerCase()}-data-warehouse-ingestion`, {
+      ...props,
+      ...sharedInfra,
+      
+      // Edit config below
+      
+      skipprVersion: "v3.2.0",
+
+      sourcePluginName: "s3_inventory",
+      
+      ... etc
+```
+
 # Deploy 
 
 In your local command shell:

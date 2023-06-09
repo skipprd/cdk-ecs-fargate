@@ -188,6 +188,7 @@ export class SkipprStack extends Stack {
             ],
         });
         Tags.of(ecsService).add('Component', 'Skippr Ingest Jobs');
+        ecsService.node.addDependency(skipprIngestRole)
 
         // Optional secret for API key
         // ecsService.node.addDependency(props.skipprApiKeySecret)

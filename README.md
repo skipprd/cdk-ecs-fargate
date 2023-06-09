@@ -16,14 +16,14 @@ This project reqquires:
 
 # Configuration
 
-Edit [consts.ts](./lib/consts.ts) and update:
+Edit [ ./lib/consts.ts](./lib/consts.ts) and update:
 
 - AWS Account ID (Target AWS Account ID to deploy infrastructure to)
 - AWS Region (AWS Region of the target account)
 - Projects Logical Name (A logical name for the deployed infra. e.g. 'Prod', 'Skippr Test', 'Acme Datalake', etc)
 
 
-Edit [data-warehouse-stack.ts](./lib/data-warehouse-stack.ts) and update the Skippr config for the `ingestionJob` resource:
+Edit [./lib/data-warehouse-stack.ts](./lib/data-warehouse-stack.ts) and update the Skippr config for the `ingestionJob` resource:
 
 ```base
 const ingestionJob = new SkipprStack(this, `${props.logicalName.toLowerCase()}-data-warehouse-ingestion`, {
@@ -38,6 +38,12 @@ const ingestionJob = new SkipprStack(this, `${props.logicalName.toLowerCase()}-d
       
       ... etc
 ```
+
+### Config Input / Output Plugins
+
+This referene project is configure to use the `S3` input plugin and `Athena` output plugin.
+
+IF you intend to use different plugins, you will need to update the CDK in [./lib/components/skippr.ts](./li.b/components/skippr.ts)
 
 # Deploy 
 

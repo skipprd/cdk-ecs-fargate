@@ -6,7 +6,7 @@ import { AWS_ACCOUNT_ID, AWS_REGION, LOGICAL_NAME } from "../lib/consts";
 
 const app = new cdk.App();
 
-new DataWarehouseStack(app, 'DataWarehouse-CICD', {
+new DataWarehouseStack(app, 'DataWarehouse-Stack', {
   env: {
     account: AWS_ACCOUNT_ID,
     region: AWS_REGION,

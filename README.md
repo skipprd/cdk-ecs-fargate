@@ -50,5 +50,5 @@ IF you intend to use different plugins, you will need to update the CDK in [./li
 In your local command shell:
 
 ```bash
-npx cdk list
+npx cdk deploy DataWarehouse-Stack
 ```

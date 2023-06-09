@@ -10,7 +10,7 @@ The CDK creates the follow resources in your AWS Account:
 - S3 Bucket for ingested data
 - Associated IAM Roles
 
-This project reqquires:
+This project requires:
 
 
 

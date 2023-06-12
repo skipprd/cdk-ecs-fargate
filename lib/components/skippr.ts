@@ -144,7 +144,7 @@ export class SkipprStack extends Stack {
 
         const fileSystem = new efs.FileSystem(scope, `${props.logicalName.toLowerCase()}-${props.pipelineName}-skippr-efs`, {
             vpc: props.vpc,
-            vpcSubnets: props.vpc.selectSubnets({subnetType: SubnetType.PUBLIC}),
+            vpcSubnets: props.vpc.selectSubnets({subnetType: SubnetType.PUBLIC, onePerAz: true}),
             encrypted: true,
             lifecyclePolicy: efs.LifecyclePolicy.AFTER_7_DAYS,
             performanceMode: efs.PerformanceMode.GENERAL_PURPOSE,

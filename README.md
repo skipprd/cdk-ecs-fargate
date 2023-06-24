@@ -1,6 +1,6 @@
 # Skippr CDK for AWS ECS Fargate
 
-This project bootstraps a serverless Skippr job on AWS ECS Fargate.
+This project bootstraps a serverless [Skippr](https://github.com/skipprd/skipprd) job on AWS ECS Fargate via the AWS Typescript CDK.
 
 The CDK creates the follow resources in your AWS Account:
 
@@ -9,10 +9,16 @@ The CDK creates the follow resources in your AWS Account:
 - Elastic File System
 - S3 Bucket for ingested data
 - Associated IAM Roles
-
+ 
 This project requires:
 
+# Install
 
+Install the project dependencies:
+
+```bash
+npm install
+```
 
 # Configuration
 

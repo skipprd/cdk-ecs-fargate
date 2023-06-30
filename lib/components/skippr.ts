@@ -159,8 +159,8 @@ export class SkipprStack extends Stack {
             scope,
             `${props.logicalName.toLowerCase()}-${props.pipelineName}-ingest-task`,
             {
-                cpu: 1024,
-                memoryLimitMiB: 2048,
+                cpu: 1024 * 2,
+                memoryLimitMiB: 2048 * 2,
                 taskRole: skipprIngestRole,
             }
         );

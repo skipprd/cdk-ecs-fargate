@@ -74,9 +74,9 @@ const ingestionJob = new SkipprStack(this, `${props.logicalName.toLowerCase()}-d
 
 ### Vertical Scaling
 
-By default, the Skippr ECS Fargate task is configured to use 1 CPU and 2GB of memory.
+By default, the Skippr ECS Fargate task is configured to use 2 CPU and 4GB of memory.
 
-If you need to increase the CPU or memory, you can edit the `./lib/data-warehouse-stack.ts` file and update the `taskDefinition` resource:
+If you need to decrease/increase the CPU or memory, you can edit the `./lib/data-warehouse-stack.ts` file and update the `taskDefinition` resource:
 
 ```base
 const taskDefinition = new ecs.FargateTaskDefinition(this, `${props.logicalName.toLowerCase()}-task-definition`, {
@@ -86,6 +86,9 @@ const taskDefinition = new ecs.FargateTaskDefinition(this, `${props.logicalName.
 
 Please refer to [https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-cpu-memory-error.html](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-cpu-memory-error.html) for more information on CPU and memory limits for ECS Fargate.
 
+The appropriate level of CPU and memory will depend on the Skippr Input Plugin you are using and the specifics of the data you are ingesting. 
+Volume of data, number of files, file size, configured partitions, configrued buffer sizes, etc will all impact the CPU and memory requirements. 
+Ultimately, you will need to test and tune the CPU and memory to suit your specific use case, which may vary over time and across environments (dev, test, prod, etc).
 
 
 ### Horizontal Scaling

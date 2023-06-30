@@ -206,11 +206,13 @@ export class SkipprStack extends Stack {
                 }),
                 environment: {
                     DATA_SOURCE_PLUGIN_NAME: props.sourcePluginName,
-                    // DATA_SOURCE_S3_INVENTORY_BUCKET: props.sourceS3Bucket,
-                    // DATA_SOURCE_S3_INVENTORY_PREFIX: props.sourceS3Prefix,
 
                     DATA_SOURCE_S3_BUCKET: props.sourceS3Bucket,
                     DATA_SOURCE_S3_PREFIX: props.sourceS3Prefix,
+
+                    // e.g. for S3 Inventory (DATA_SOURCE_PLUGIN_NAME: s3_inventory) Input Plugin
+                    // DATA_SOURCE_S3_INVENTORY_BUCKET: props.sourceS3Bucket,
+                    // DATA_SOURCE_S3_INVENTORY_PREFIX: props.sourceS3Prefix,
 
                     DATA_SOURCE_BATCH_SIZE_BYTES: props.sourceBatchSizeBytes,
 
